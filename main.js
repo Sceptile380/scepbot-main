@@ -66,8 +66,8 @@ const Emb = new Discord.MessageEmbed()
                const serious = new Discord.MessageEmbed()
                    .setColor('#06fff8')
                   .setTitle('Ocean man')
-                   .setDescription('You know who is this guy? That one guy who loves dolphins. He hates UwU. Yes. Sometimes he being frick. just dont say "uwu" to this guy. please.')
-                    .setFooter('simps chinre but he doesnt want to let it be known');
+                   .setDescription('oh, you wanna know about this guy? This guy loves dolphins. And yeah, this guy is nothing special')
+                    .setFooter('he is special acutally.');
        message.channel.send(serious)
 
     }
@@ -125,7 +125,7 @@ const Emb = new Discord.MessageEmbed()
         if (command === 'ourgang') {
         message.channel.send('info of these guys:\n-$zap\n-$sceptile380\n-$andrew \n-$sandman\n-$skm\n-$delta\n-$ealanedem\n-$serious\n-$bea\n-$spungebob')
         }
-		if (command === 'invite') {
+		if (command === 'support') {
     message.channel.send('Come here to get support: https://discord.gg/PZEd2G7wbB')
     }
 
