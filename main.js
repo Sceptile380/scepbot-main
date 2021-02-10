@@ -125,6 +125,9 @@ const Emb = new Discord.MessageEmbed()
         if (command === 'ourgang') {
         message.channel.send('info of these guys:\n-$zap\n-$sceptile380\n-$andrew \n-$sandman\n-$skm\n-$delta\n-$ealanedem\n-$serious\n-$bea\n-$spungebob')
         }
+		if (command === 'invite') {
+    message.channel.send('Come here to get support: https://discord.gg/PZEd2G7wbB')
+    }
 
 });
 
