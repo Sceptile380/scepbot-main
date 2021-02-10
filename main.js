@@ -10,13 +10,13 @@ const args = message.content.slice(prefix.length).trim().split(/ +/);
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
    if (command === 'help') {
-	 message.channel.send(`Hello, how can i help you? \`\`\` -die: you die for something.\n \n -invite: get an instant invite link. \n \n -OurGang: get the list.\n \n -stfu:[admin only] delete the last message. \n \n Sceptile: see a gif of Sceptile because it's cool \n \n  -funfact: get a fun fact! \`\`\` `);
+	 message.channel.send(`Hello, how can i help you? \`\`\`-die: you die for something.\n \n-invite: get an instant invite link. \n \n-OurGang: get the list.\n \n-funfact: get a fun fact! \`\`\` `);
 	}
     if (command === 'die') {
-        const months = ["[died because he tried to breathe lava; is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone"];
+        const months = ["died because he tried to breathe lava", "is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone"];
 
 const ra = months[Math.floor(Math.random()*months.length)]
-message.channel.send(message.author.username + ra);
+message.channel.send(`${message.author.username} ${ra}`);
     }
     if (command === 'zap') {
 
@@ -24,8 +24,8 @@ message.channel.send(message.author.username + ra);
 	.setColor('#58f8ff')
 	.setTitle('Zappatron')
 	.setURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-	.setDescription('Zappatron, AKA Zap, is a gay boy. He is 13 years old and like brawlstarsp. He is a horni boi, expert csv modder, likes 8-bit, and have a partner, called PedroAPD. They are Shipped and called "Zappedro')
-	 .setFooter('he is a green boi with an eyepatch that he acutally dont need.');
+	.setDescription('Zappatron, AKA Zap, is a gay boy. He is 13 years old and like brawlstarsp. He is a horni boi, expert csv modder, likes 8-bit, and have a partner, called PedroAPD. They are Shipped and called "Zappedro"')
+	 .setFooter('but no one likes the ship');
      message.channel.send(exampleEmbed);
     }
     if (command === 'sceptile') {
@@ -128,5 +128,5 @@ const Emb = new Discord.MessageEmbed()
 
 });
 
-client.login('NzY3MTIwNDY3ODA2Mzg4MjU0.X4tSmw.wOa7LWS_toOX20NTplztyCeKArk');
+client.login('ODA4NzQ3NTkyODU4MzM3Mjgx.YCLC4w.jc_X5aMc-9_Mlj24R8xkOGjeLb0');
 
