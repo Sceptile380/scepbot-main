@@ -10,13 +10,27 @@ const args = message.content.slice(prefix.length).trim().split(/ +/);
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
    if (command === 'help') {
-	 message.channel.send(`Hello, how can i help you? \`\`\` -die: you die for something.\n \n -invite: get an instant invite link. \n \n -OurGang: get the list.\n \n -stfu:[admin only] delete the last message. \n \n Sceptile: see a gif of Sceptile because it's cool \n \n  -funfact: get a fun fact! \`\`\` `);
+     const bed = new Discord.MessageEmbed()
+    .setColor('#58f8ff')
+    .setTitle('Help')
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+    .setDescription(`Prefix is ${prefix}`)
+    .addFields(
+		{ name: 'OurGang', value: 'Lists ourgang commands...' },
+		{ name: 'Support', value: 'Sends invite to support server' },
+		{ name: 'die', value: 'you die for something' },
+        { name: 'invite', value: 'Sends invite for the bot' },
+        { name: 'funfact', value: 'Get a fun fact ' },
+	)
+    .setFooter('h');
+     message.channel.send(bed)
+
 	}
     if (command === 'die') {
-        const months = ["[died because he tried to breathe lava; is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone"];
+        const months = ["died because he tried to breathe lava", "is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone"];
 
 const ra = months[Math.floor(Math.random()*months.length)]
-message.channel.send(message.author.username + ra);
+message.channel.send(`${message.author.username} ${ra}`);
     }
     if (command === 'zap') {
 
@@ -24,8 +38,8 @@ message.channel.send(message.author.username + ra);
 	.setColor('#58f8ff')
 	.setTitle('Zappatron')
 	.setURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-	.setDescription('Zappatron, AKA Zap, is a gay boy. He is 13 years old and like brawlstarsp. He is a horni boi, expert csv modder, likes 8-bit, and have a partner, called PedroAPD. They are Shipped and called "Zappedro')
-	 .setFooter('he is a green boi with an eyepatch that he acutally dont need.');
+	.setDescription('Zappatron, AKA Zap, is a gay boy. He is 13 years old and like brawlstarsp. He is a horni boi, expert csv modder, likes 8-bit, and have a partner, called PedroAPD. They are Shipped and called "Zappedro"')
+	 .setFooter('but no one likes the ship');
      message.channel.send(exampleEmbed);
     }
     if (command === 'sceptile') {
@@ -66,8 +80,8 @@ const Emb = new Discord.MessageEmbed()
                const serious = new Discord.MessageEmbed()
                    .setColor('#06fff8')
                   .setTitle('Ocean man')
-                   .setDescription('oh, you wanna know about this guy? This guy loves dolphins. And yeah, this guy is nothing special')
-                    .setFooter('he is special acutally.');
+                   .setDescription('You know who is this guy? That one guy who loves dolphins. He hates UwU. Yes. Sometimes he being frick. just dont say "uwu" to this guy. please.')
+                    .setFooter('simps chinre but he doesnt want to let it be known');
        message.channel.send(serious)
 
     }
@@ -123,11 +137,8 @@ const Emb = new Discord.MessageEmbed()
 
     }
         if (command === 'ourgang') {
-        message.channel.send('info of these guys:\n-$zap\n-$sceptile380\n-$andrew \n-$sandman\n-$skm\n-$delta\n-$ealanedem\n-$serious\n-$bea\n-$spungebob')
+        message.channel.send('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sandman\n-$skm\n-$delta\n-$ealanedem\n-$serious\n-$bea\n-$spungebob')
         }
-		if (command === 'support') {
-    message.channel.send('Come here to get support: https://discord.gg/PZEd2G7wbB')
-    }
 
 });
 
