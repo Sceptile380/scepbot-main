@@ -138,5 +138,5 @@ const Emb = new Discord.MessageEmbed()
 
 });
 
-client.login('ODA4NzQ3NTkyODU4MzM3Mjgx.YCLC4w.jc_X5aMc-9_Mlj24R8xkOGjeLb0');
+client.login('NzY3MTIwNDY3ODA2Mzg4MjU0.X4tSmw.wOa7LWS_toOX20NTplztyCeKArk');
 
