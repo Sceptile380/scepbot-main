@@ -16,11 +16,11 @@ const args = message.content.slice(prefix.length).trim().split(/ +/);
     .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
     .setDescription(`Prefix is ${prefix}`)
     .addFields(
-		{ name: 'OurGang', value: 'Lists ourgang commands...' },
-		{ name: 'Support', value: 'Sends invite to support server' },
-		{ name: 'die', value: 'you die for something' },
-        { name: 'invite', value: 'Sends invite for the bot' },
-        { name: 'funfact', value: 'Get a fun fact ' },
+		{ name: 'OurGang', value: 'Lists ourgang commands...', inline: true  },
+		{ name: 'Support', value: 'Sends invite to support server', inline: true  },
+		{ name: 'die', value: 'you die for something', inline: true  },
+        { name: 'invite', value: 'Sends invite for the bot', inline: true  },
+        { name: 'funfact', value: 'Get a fun fact ', inline: true}
 	)
     .setFooter('h');
      message.channel.send(bed)
@@ -115,12 +115,8 @@ const Emb = new Discord.MessageEmbed()
     if (command === 'invite') {
     message.channel.send('https://discordapp.com/oauth2/authorize?client_id=767120467806388254&scope=bot&permissions=2146958847 Here. why you want me?')
     }
-    if (command === 'say') {
-    const say = new Discord.MessageEmbed()
-    .setTitle(args.join( ));
-    message.channel.send(say)
-    }
-    if (command === 'funfact') {
+
+    if (command === 'funfact'){
                    const h = ["Zap, before being gay, was bisexual for some reasons.", "Andrew became Sceptile380's gf for 4 minutes only because Sceptile wanted a gf.", "Sceptile380 has never seen brawlstarsphomo, luckily.", "Spungebob left Our Brawl because yes.", " Sceptile380's oc have an hook now.", "Scand bot will be a brawler if ealanedem completes it.", " Ocean man simp chinre!!1!!" , "hey shitass... nvm.", "Now Sand is a protogen." , "Wendro came straight from reddit and surprisingly everyone knew him." , "yooooooo! who lives in a pinap- nevermind I'm having a stroke.", " People finally stopped hating Zap.", " Pedro now tries to simp Sceptile in dms saying senpai.", " Bea pfp will always be a nsfw cropped pic or smth of similar", "Delta is the new owner of Brawl 'n talk cuz of yes.", " spunj blocked his friends.", " Plane have a new battle partner: Carmor."];
 
    const r = h[Math.floor(Math.random()*h.length)]
@@ -137,10 +133,10 @@ const Emb = new Discord.MessageEmbed()
 
     }
         if (command === 'ourgang') {
-        message.channel.send('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sandman\n-$skm\n-$delta\n-$ealanedem\n-$serious\n-$bea\n-$spungebob')
+        message.channel.send('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge')
         }
 
 });
 
-client.login('NzY3MTIwNDY3ODA2Mzg4MjU0.X4tSmw.wOa7LWS_toOX20NTplztyCeKArk');
+client.login('ODA4NzQ3NTkyODU4MzM3Mjgx.YCLC4w.jc_X5aMc-9_Mlj24R8xkOGjeLb0');
 
