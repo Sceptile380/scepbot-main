@@ -70,7 +70,7 @@ else if (command === 'pokemon') {
          }
 
 else if (command === 'die') {
-        const months = ["died because he tried to breathe lava", "is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone"];
+        const months = ["died because he tried to breathe lava", "is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone", "died because he is a fucking bedrock breaker and nobody likes him.", "has fallen in a river", "spilled his brain off his left ear. Correction: he never had a brain, he just spilled some shit. my bad.", "committed suicide. You fool!", "***, do you wanna have a bad time?***", ", you stink so much that neither the Death wants you. Sad."];
 
     const ra = months[Math.floor(Math.random()*months.length)]
     message.channel.send(`${message.author.username} ${ra}`);
@@ -81,8 +81,8 @@ else if (command === 'die') {
 	.setColor(emcolor)
 	.setTitle('Zappatron')
 	.setURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-	.setDescription('Zappatron, AKA Zap, is a gay boy. He is 13 years old and like brawlstarsp. He is a horni boi, expert csv modder, likes 8-bit, and have a partner, called PedroAPD. They are Shipped and called "Zappedro"')
-	 .setFooter('but no one likes the ship');
+	.setDescription('Zappatron, AKA Zap, is a gay boy. He is 13 years old and like brawlstarsp. He is a horni boi, expert csv modder, likes 8-bit, and sometimes asks sceptile to make a maid skin for it. With sceptile, he got 3 brawlers in reBrawl.')
+	 .setFooter('a h');
      message.channel.send(exampleEmbed);
     }
    else if (command === 'sceptile') {
@@ -91,7 +91,7 @@ else if (command === 'die') {
        .setColor(emcolor)
        .setTitle('Sceptile380')
        .setDescription('Sceptile380 is a 15 years old boy from Italy. He does lots of dumb jokes about his country, but no one cares. He likes Pokemon since he was 6, and likes Brawl Stars because of Modding. He is also a good Modder and can make custom skins.')
-        .setFooter('he is a green boi with an eyepatch that he acutally don\'t need.');
+        .setFooter('he wears an eyepatch that he actually don\'t need.');
     message.channel.send(Embed)
 }
 
@@ -101,7 +101,7 @@ else if (command === 'die') {
         .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
           .setColor(emcolor)
           .setTitle('Mr.Sandman')
-          .setDescription('Mr. Sandman, or just Sand is a 12 years old boi that likes the character Sandy from Brawl Stars. He cured his depression thanks to his Discord friends. He likes to draw and does it very well. He tried to escape Our brawl...but there is no WAY.Now he is a protogen furry.')
+          .setDescription('Mr. Sandman, or just Sand is a 12 years old boi that likes the character Sandy from Brawl Stars. He is a protogen now. He cured his depression thanks to his Discord friends. He likes to draw and does it very well. He tried to escape Our brawl...but there is no WAY.Now he is a protogen furry.')
            .setFooter('he is secretly sandsunderman');
        message.channel.send(Emb)
 
@@ -111,8 +111,8 @@ else if (command === 'die') {
                const andrew = new Discord.MessageEmbed()
                .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
              .setColor(emcolor)
-             .setTitle('Andrew')
-             .setDescription('Andrew. is a...half Steve from Minecraft amd half Funtime Foxy. He is a notorious Modder and skin maker and is a friend of TheAmazingCC. He is famous for the "Arcade Shelly" skin that he made for ReBrawl')
+             .setTitle('Andrew.')
+             .setDescription('Andrew. is a...half Steve from Minecraft amd half Funtime Foxy. He is a notorious Modder and skin maker and is a friend of TheAmazingCC. He is famous for the "Arcade Shelly" skin that he made for ReBrawl. He also likes Friday night fuckin and is making a whole mod for our gang.')
               .setFooter('but nowdays nobody plays that skin.');
           message.channel.send(andrew)
 
@@ -123,7 +123,7 @@ else if (command === 'die') {
                 .setColor(emcolor)
                 .setTitle('Delta')
                 .setDescription('Retarded as hell. Likes coding and undertale. Also very lazy. Hates ships. Positive')
-                .setFooter('to coronavirus');
+                .setFooter('to coronavirus. jk');
       message.channel.send(delta)
 }
 
@@ -176,7 +176,7 @@ else if (command === 'eal') {
 }
 
     else if (command === 'funfact'){
-                   const h = ["Zap, before being gay, was bisexual for some reasons.", "Andrew became Sceptile380's gf for 4 minutes only because Sceptile wanted a gf.", "Sceptile380 has never seen brawlstarsphomo, luckily.", "Spungebob left Our Brawl because yes.", " Sceptile380's oc have an hook now.", "Scand bot will be a brawler if ealanedem completes it.", " Ocean man simp chinre!!1!!" , "hey shitass... nvm.", "Now Sand is a protogen." , "Wendro came straight from reddit and surprisingly everyone knew him." , "yooooooo! who lives in a pinap- nevermind I'm having a stroke.", " People finally stopped hating Zap.", " Pedro now tries to simp Sceptile in dms saying senpai.", " Bea pfp will always be a nsfw cropped pic or smth of similar", "Delta is the new owner of Brawl 'n talk cuz of yes.", " spunj blocked his friends.", " Plane have a new battle partner: Carmor."];
+                   const h = ["Zap, before being gay, was bisexual for some reasons.", "Andrew became Sceptile380's gf for 4 minutes only because Sceptile wanted a gf.", "Sceptile380 has never seen brawlstarsphomo, luckily.", "Spungebob left Our Brawl because yes.", " Sceptile380's oc have an hook now.", "Scand bot will be a brawler if ealanedem completes it.", " spunge is bacc yay" , "hey shitass... nvm.", "Now Sand is a protogen." , "Wendro came straight from reddit and surprisingly everyone knew him." , "yooooooo! who lives in a pinap- nevermind I'm having a stroke.", " People finally stopped hating Zap.", " Pedro now tries to simp Sceptile in dms saying senpai.", " Bea pfp will always be a nsfw cropped pic or smth of similar", "Delta is the new owner of Brawl 'n talk cuz of yes.", " spunj blocked his friends.", " Plane have a new battle partner: Carmor."];
 
    const r = h[Math.floor(Math.random()*h.length)]
    message.channel.send(r);
@@ -188,7 +188,7 @@ else if (command === 'eal') {
                            .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
                             .setColor(emcolor)
                             .setTitle('Spungebob')
-                            .setDescription('Spunge is a 13 yeard old boy that likes to chat on discord and play brawl stars. I try not to go mentaly insane because of school and i can have mental breakdown. Im very weird sometimes, and a big dumbass.')
+                            .setDescription('Spunge is a 13 yeard old boy that likes to chat on discord and play brawl stars. he tries not to go mentaly insane because of school and can have mental breakdowns. He is very weird sometimes, and a big dumbass.')
                             .setFooter('simp');
                   message.channel.send(spunj)
 
@@ -196,6 +196,13 @@ else if (command === 'eal') {
         else if (command === 'ourgang') {
         message.channel.send('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge')
         }
+		
+		else if (command === 'question'){
+			if (!args.length) { message.channel.send("you dumbass have to ask me a question.") }
+                   const h = ["yes", "no", "maybe", "ur mom"];
+
+   const r = h[Math.floor(Math.random()*h.length)]
+   message.channel.send(r);
 // --------------------------------- ASYNC ---------------------------------------------------------------
 
 
