@@ -1,2 +1,2 @@
 web: echo "I don't want a web process"
-worker: node main.js
+worker: node index.js
