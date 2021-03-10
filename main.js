@@ -168,7 +168,7 @@ else if (command === 'eal') {
 }
 
    else if (command === 'server') {
-    message.channel.send('Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}')
+    message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`)
 }
 
     else if (command === 'funfact'){
