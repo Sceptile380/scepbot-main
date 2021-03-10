@@ -64,6 +64,10 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
     sent.edit(`My ping: ${sent.createdTimestamp - message.createdTimestamp}ms api ping ${client.ws.ping}ms`);
 });
 }
+else if (command === 'pokemon') {
+          if (!args.length) { message.channel.send("what pokemon?, Your mom?") }
+         message.channel.send("https://m.bulbapedia.bulbagarden.net/wiki/" + args[0] + "_(Pok%C3%A9mon)")
+         }
 
 else if (command === 'die') {
         const months = ["died because he tried to breathe lava", "is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone"];
@@ -168,7 +172,7 @@ else if (command === 'eal') {
 }
 
    else if (command === 'server') {
-    message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`)
+    message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\n server id: ${message.guild.id}`)
 }
 
     else if (command === 'funfact'){
