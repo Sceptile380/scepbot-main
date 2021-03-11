@@ -4,7 +4,12 @@ const client = new Discord.Client();
 const fetch = require('node-fetch');
 const querystring = require('querystring');
 const prefix = "$"
-
+function clean(text) {
+  if (typeof(text) === "string")
+    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+  else
+      return text;
+}
 const talkedRecently = new Set();
 const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
 // ##########################################################################
@@ -172,7 +177,24 @@ else if (command === 'eal') {
 }
 
    else if (command === 'server') {
-    message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\n server id: ${message.guild.id}`)
+   /* message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\n server id: ${message.guild.id} \n afk channel : ${message.guild.afkChannel} \n afk timeout : ${message.guild.afkTimeout} \n channels : ${message.guild.channels} \n CreatedAt: ${message.guild.createdAt} \n descriptions (null if it doesn't have) : ${message.guild.description} \n channels : ${message.guild.channels}`)
+    */
+    let embed = new Discord.MessageEmbed()
+            .setColor(emcolor)
+            .setAuthor(message.guild.name, message.guild.iconURL)
+            .setTitle("Server Info")
+            .setImage(message.guild.iconURL)
+            .setDescription(`${message.guild}'s information`)
+            .addField("Owner", `The owner of this server is ${message.guild.owner}`)
+            .addField("Member Count", `This server has ${message.guild.memberCount} members`)
+            .addField("Emoji Count", `This server has ${message.guild.emojis.cache.size} emojis`)
+            .addField("Roles Count", `This server has ${message.guild.roles.cache.size} roles`)
+              .addField('Location', message.guild.region, true)
+ .setTimestamp()
+   .setFooter(client.user.username, client.user.avatarURL);
+
+
+        message.channel.send(embed)
 }
 
     else if (command === 'funfact'){
@@ -196,7 +218,7 @@ else if (command === 'eal') {
         else if (command === 'ourgang') {
         message.channel.send('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge')
         }
-		
+
 		else if (command === 'question'){
 			if (!args.length) { message.channel.send("you dumbass have to ask me a question.") }
                    const h = ["yes", "no", "maybe", "ur mom"];
@@ -206,7 +228,8 @@ else if (command === 'eal') {
 // --------------------------------- ASYNC ---------------------------------------------------------------
 
 
-}});
+}
+});
 client.on("message", async message => {
    const args = message.content.slice(prefix.length).trim().split(/ +/);
      const command = args.shift().toLowerCase();
@@ -282,7 +305,26 @@ message.channel.send(fembed)
 }
 
 
- });
+ })
+ //third message event just to be sure
+ client.on("message", message => {
+  const args = message.content.split(" ").slice(1);
+if(message.author.id !== '572469043265536000') return;
+  if (message.content.startsWith('$' + "eval")) {
+    if(message.author.id !== '572469043265536000') return;
+    try {
+      const code = args.join(" ");
+      let evaled = eval(code);
+
+      if (typeof evaled !== "string")
+        evaled = require("util").inspect(evaled);
+
+      message.channel.send(clean(evaled), {code:"xl"});
+    } catch (err) {
+      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+    }
+  }
+});
  // #_---------------------------------------- token -----------------------------------------
 client.login('NzY3MTIwNDY3ODA2Mzg4MjU0.X4tSmw.wOa7LWS_toOX20NTplztyCeKArk');
 
