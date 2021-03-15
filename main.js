@@ -1,4 +1,4 @@
-
+const { get } = require("request-promise-native");
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fetch = require('node-fetch');
@@ -15,6 +15,8 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 // ##########################################################################
 client.once('ready', () => {
     console.log('Sceptile is ready!!!!!!!');
+    client.user.setActivity('I use arch btw. and yes i changed the status');
+
 
 });
 // DEBUGING
@@ -69,10 +71,7 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
     sent.edit(`My ping: ${sent.createdTimestamp - message.createdTimestamp}ms api ping ${client.ws.ping}ms`);
 });
 }
-else if (command === 'pokemon') {
-          if (!args.length) { message.channel.send("what pokemon?, Your mom?") }
-         message.channel.send("https://m.bulbapedia.bulbagarden.net/wiki/" + args[0] + "_(Pok%C3%A9mon)")
-         }
+
 
 else if (command === 'die') {
         const months = ["died because he tried to breathe lava", "is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone", "died because he is a fucking bedrock breaker and nobody likes him.", "has fallen in a river", "spilled his brain off his left ear. Correction: he never had a brain, he just spilled some shit. my bad.", "committed suicide. You fool!", "***, do you wanna have a bad time?***", ", you stink so much that neither the Death wants you. Sad."];
@@ -228,30 +227,14 @@ else if (command === 'eal') {
 // --------------------------------- ASYNC ---------------------------------------------------------------
 
 
-}
+    }
 });
 client.on("message", async message => {
    const args = message.content.slice(prefix.length).trim().split(/ +/);
-     const command = args.shift().toLowerCase();
-
-   if(command === "ban") {
-       if (!message.member.hasPermission('BAN_MEMBERS'))
-       return message.reply("No permissions");
-      let member = message.mentions.members.first();
-      if(!member)
-        return message.reply("Invalid user");
-      if(!member.bannable)
-        return message.reply("Cannot ban user");
-
-     let reason = args.slice(1).join(" ");
-      if(!reason) reason = "None";
-
-     await member.ban({reason : reason})
-       .catch(error => message.reply(`${message.author} Error : ${error}`));
-     message.reply(`${member.user.tag} is banned by ${message.author.tag} because: ${reason}, for : 5 years`);
+  const command = args.shift().toLowerCase();
 
 
- }
+
    /* if (command === "mute") {
     if (!args.length) {
     return message.channel.send("Noobody to mute")
@@ -291,7 +274,35 @@ client.on("message", async message => {
     message.channel.send(`\n<@${tomute.id}>unmuted!`);
   }, ms(mutetime));
     }; */
-else if (command === 'cat') {
+    if (command === ('pokemon')) {
+    if (args.length) { console.log(' ')}
+    const x = args.join("_")
+if((await fetch("https://m.bulbapedia.bulbagarden.net/wiki/"+x+"_(Pok%C3%A9mon)")).status == 404){
+    message.channel.send("not found")
+}else{
+    message.channel.send("https://m.bulbapedia.bulbagarden.net/wiki/"+x+"_(Pok%C3%A9mon)")
+}
+    }
+
+  if(message.content.startsWith(prefix + 'ban')) {
+      if (!message.member.hasPermission('BAN_MEMBERS'))
+      return message.reply("No permissions");
+     let member = message.mentions.members.first();
+     if(!member)
+       return message.reply("Invalid user");
+     if(!member.bannable)
+       return message.reply("Cannot ban user");
+
+    let reason = args.slice(1).join(" ");
+     if(!reason) reason = "None";
+
+    await member.ban({reason : reason})
+      .catch(error => message.reply(`${message.author} Error : ${error}`));
+    message.reply(`${member.user.tag} is banned by ${message.author.tag} because: ${reason}, for : 5 years`);
+
+
+    }
+if(message.content.startsWith(prefix + 'cat')) {
 
       const { file } = await fetch('https://aws.random.cat/meow').then(response => response.json());
 const fembed = new Discord.MessageEmbed()
@@ -304,9 +315,7 @@ const fembed = new Discord.MessageEmbed()
 message.channel.send(fembed)
 }
 
-
  })
- //third message event just to be sure
  client.on("message", message => {
   const args = message.content.split(" ").slice(1);
 if(message.author.id !== '572469043265536000') return;
