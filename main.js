@@ -1,4 +1,4 @@
-const { get } = require("request-promise-native");
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fetch = require('node-fetch');
@@ -15,7 +15,7 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 // ##########################################################################
 client.once('ready', () => {
     console.log('Sceptile is ready!!!!!!!');
-    client.user.setActivity('I use arch btw. and yes i changed the status');
+    client.user.setActivity('I use arch btw');
 
 
 });
