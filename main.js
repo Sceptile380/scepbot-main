@@ -242,7 +242,7 @@ if (!message.mentions.users.size) {
 
    const brazil = ["has been sent to brazil. Muito quente...", "Olá amigo! Bem vindo ao Brasil!"];
   const bruhzil = brazil[Math.floor(Math.random()*brazil.length)]
- else { message.channel.send(message.mentions.users.first().username + " " + bruhzil)}
+ {message.channel.send(message.mentions.users.first().username + " " + bruhzil)}
 
 
 }
