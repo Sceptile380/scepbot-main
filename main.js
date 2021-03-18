@@ -1,4 +1,3 @@
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fetch = require('node-fetch');
@@ -29,7 +28,6 @@ const args = message.content.slice(prefix.length).trim().split(/ +/);
 const command = args.shift().toLowerCase();
 // ###########################################################################
 if (!message.content.startsWith(prefix) || message.author.bot) return;
-
 if (talkedRecently.has(message.author.id))
   return;
 
@@ -223,63 +221,46 @@ else if (command === 'eal') {
                    const h = ["yes", "no", "maybe", "ur mom"];
 
    const r = h[Math.floor(Math.random()*h.length)]
-   message.channel.send(r);
-// --------------------------------- ASYNC ---------------------------------------------------------------
+   message.channel.send(r); }
+if (command === 'gotobrazil') {
+if (!message.mentions.users.size) {
+	return message.reply('no');
+}
+
+   const brazil = ["has been sent to brazil. Muito quente...", "Olá amigo! Bem vindo ao Brasil!"];
+  const bruhzil = brazil[Math.floor(Math.random()*brazil.length)]
+ if (!args.length) { message.channel.send("You have been yeeted")}
+ else { message.channel.send(message.mentions.users.first().username + " " + bruhzil)}
 
 
-    }
+}
+
+
+
+
+if (command === 'bean') {
+if (!message.mentions.users.size) {
+       return message.reply('no');
+   }
+
+message.channel.send(message.mentions.users.first().username + " " + "has been beaned. LOL")
+
+}
+
+
+
 });
+// --------------------------------- ASYNC ---------------------------------------------------------------
 client.on("message", async message => {
-   const args = message.content.slice(prefix.length).trim().split(/ +/);
-  const command = args.shift().toLowerCase();
+ const args = message.content.slice(prefix.length).trim().split(/ +/);
+ const command = args.shift().toLowerCase();
 
-
-
-   /* if (command === "mute") {
-    if (!args.length) {
-    return message.channel.send("Noobody to mute")
-    }
-             if (!message.member.hasPermission('MANAGE_MESSAGES')) {
-                message.channel.send("No permissions")
-         };
-   let tomute = message.mentions.members.first();
-
-  if (!tomute) {
-    message.channel.send("Invalid user")
-  };
-          let muterole = message.guild.roles.cache.find(r => r.name ===  "Muted");
-        if (!muterole) {
-    try {
-      muterole = await message.guild.roles.create({
-        name: "Muted",
-        color: "#000000",
-        permissions: []
-      })
-      message.guild.channels.cache.forEach(async (channel, id) => {
-        await message.channel.overwritePermissions(muterole, {
-          SEND_MESSAGES: false,
-          ADD_REACTIONS: false
-        });
-      });
-    } catch (e) {
-      console.log(e.stack);
-    }
-  }
-          let mutetime = args[1];
-  if (!mutetime) return message.channel.send("specify time");
-  await (tomute.roles.add(muterole.id));
-  message.channel.send(` \n<@${tomute.id}> muted for ${ms(ms(mutetime))}`);
-  setTimeout(function() {
-    tomute.removeRole(muterole.id);
-    message.channel.send(`\n<@${tomute.id}>unmuted!`);
-  }, ms(mutetime));
-    }; */
     if (command === ('pokemon')) {
-    if (args.length) { console.log(' ')}
-    const x = args.join("_")
-if((await fetch("https://m.bulbapedia.bulbagarden.net/wiki/"+x+"_(Pok%C3%A9mon)")).status == 404){
-    message.channel.send("not found")
-}else{
+      const x = args.join("_")
+      if((await fetch("https://m.bulbapedia.bulbagarden.net/wiki/"+x+"_(Pok%C3%A9mon)")).status == 404){
+        message.channel.send("not found")
+      }
+      else {
     message.channel.send("https://m.bulbapedia.bulbagarden.net/wiki/"+x+"_(Pok%C3%A9mon)")
 }
     }
@@ -302,26 +283,27 @@ if((await fetch("https://m.bulbapedia.bulbagarden.net/wiki/"+x+"_(Pok%C3%A9mon)"
 
 
     }
-if(message.content.startsWith(prefix + 'cat')) {
-
+ if(message.content.startsWith(prefix + 'cat')) {
       const { file } = await fetch('https://aws.random.cat/meow').then(response => response.json());
-const fembed = new Discord.MessageEmbed()
+      const fembed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Cat')
 	.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
 	.setImage(file)
 	.setTimestamp();
 
-message.channel.send(fembed)
+ message.channel.send(fembed)
 }
 
  })
+// only for sceptile commands
  client.on("message", message => {
-  const args = message.content.split(" ").slice(1);
-if(message.author.id !== '572469043265536000') return;
-  if (message.content.startsWith('$' + "eval")) {
+ const args = message.content.split(" ").slice(1);
+
+
     if(message.author.id !== '572469043265536000') return;
-    try {
+    if (message.content.startsWith('$' + "eval")) {
+      try {
       const code = args.join(" ");
       let evaled = eval(code);
 
