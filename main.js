@@ -22,8 +22,16 @@ client.once('ready', () => {
 process.on('unhandledRejection', error => {
 	console.error('Unhandled promise rejection:', error);
 });
+
+
+
+
 // ############################################################################
+
+
+
 client.on('message', message => {
+if (!message.guild) return;
 const args = message.content.slice(prefix.length).trim().split(/ +/);
 const command = args.shift().toLowerCase();
 // ###########################################################################
@@ -63,7 +71,12 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
 
 	}
 
+    else if (command == 'say') {
+if (!args.length) {message.channel.send("What should i say")}
+if (message.member.hasPermission('ADMINISTRATOR')) message.channel.send(args.join(" "))
+else { message.channel.send("no") }
 
+}
     else if (command == 'ping') {
     message.channel.send('Pinging...').then(sent => {
     sent.edit(`My ping: ${sent.createdTimestamp - message.createdTimestamp}ms api ping ${client.ws.ping}ms`);
