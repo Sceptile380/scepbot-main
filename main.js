@@ -74,7 +74,7 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
     else if (command == 'say') {
 if (!args.length) {message.channel.send("What should i say")}
 if (message.member.hasPermission('ADMINISTRATOR')) message.channel.send(args.join(" "))
-else { message.channel.send("no") }
+else { message.channel.send("no ur not an admin") }
 
 }
     else if (command == 'ping') {
@@ -237,12 +237,11 @@ else if (command === 'eal') {
    message.channel.send(r); }
 if (command === 'gotobrazil') {
 if (!message.mentions.users.size) {
-	return message.reply('no');
+	return message.reply('MENTION YOURSELF DUMB FUCK');
 }
 
    const brazil = ["has been sent to brazil. Muito quente...", "Olá amigo! Bem vindo ao Brasil!"];
   const bruhzil = brazil[Math.floor(Math.random()*brazil.length)]
- if (!args.length) { message.channel.send("You have been yeeted")}
  else { message.channel.send(message.mentions.users.first().username + " " + bruhzil)}
 
 
