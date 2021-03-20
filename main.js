@@ -64,6 +64,11 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
         { name: 'invite', value: 'Sends invite for the bot', inline: true  },
         { name: 'funfact', value: 'Get a fun fact ', inline: true},
         { name: 'cat', value: 'Shows a cat', inline: true}
+		{ name: 'gotobrazil', value: 'sends the mentioned user to brazil', inline: true}
+		{ name: 'question', value: 'replies with yes or no to your questions', inline: true}
+		{ name: 'ban', value: 'get banned lol (admin only!)', inline: true}
+		{ name: 'bean', value: 'get BEANED lol', inline: true}
+		{ name: 'say', value: 'he acts like a parrot (admins only!)', inline: true}
 
 	)
     .setFooter('h, also ping command does it\'s function');
@@ -182,6 +187,26 @@ else if (command === 'eal') {
                 message.channel.send(be)
 
 }
+else if (command === 'wendro') {
+                       const be  = new Discord.MessageEmbed()
+                        .setColor(emcolor)
+                        .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+                        .setTitle('wendro')
+                        .setDescription('Wendro is a boy from Poland. He is pretty good at modding Brawl Stars, and is really impatient. He likes many games, mostly Pokemon series, Kirby series, Undertale and Cuphead. His favourite number is 15. Not much to say about him.')
+                        .setFooter('he is a green kirb');
+                message.channel.send(be)
+
+}
+else if (command === 'fab') {
+                       const be  = new Discord.MessageEmbed()
+                        .setColor(emcolor)
+                        .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+                        .setTitle('Fabtastic')
+                        .setDescription('Fab is a "bad" artist, when he actually is good. atleast thats what others say. he is a content creator and bs player. that is pretty much all. i guess.')
+                        .setFooter('best artist ever');
+                message.channel.send(be)
+
+}
    else if (command === 'invite') {
     message.channel.send('https://discordapp.com/oauth2/authorize?client_id=767120467806388254&scope=bot&permissions=2146958847 Here. why you want me?')
 }
@@ -208,7 +233,7 @@ else if (command === 'eal') {
 }
 
     else if (command === 'funfact'){
-                   const h = ["Zap, before being gay, was bisexual for some reasons.", "Andrew became Sceptile380's gf for 4 minutes only because Sceptile wanted a gf.", "Sceptile380 has never seen brawlstarsphomo, luckily.", "Spungebob left Our Brawl because yes.", " Sceptile380's oc have an hook now.", "Scand bot will be a brawler if ealanedem completes it.", " spunge is bacc yay" , "hey shitass... nvm.", "Now Sand is a protogen." , "Wendro came straight from reddit and surprisingly everyone knew him." , "yooooooo! who lives in a pinap- nevermind I'm having a stroke.", " People finally stopped hating Zap.", " Pedro now tries to simp Sceptile in dms saying senpai.", " Bea pfp will always be a nsfw cropped pic or smth of similar", "Delta is the new owner of Brawl 'n talk cuz of yes.", " spunj blocked his friends.", " Plane have a new battle partner: Carmor."];
+                   const h = ["Zap, before being gay, was bisexual for some reasons.", "Andrew became Sceptile380's gf for 4 minutes only because Sceptile wanted a gf.", "Sceptile380 has never seen brawlstarsphomo, luckily.", "Spungebob left Our Brawl because yes.", " Sceptile380's oc have an hook now.", "Scand bot will be a brawler if ealanedem completes it.", " spunge is bacc yay" , "hey shitass... nvm.", "Now Sand is a protogen." , "Wendro came straight from reddit and surprisingly everyone knew him." , "yooooooo! who lives in a pinap- nevermind I'm having a stroke.", " People finally stopped hating Zap.", " Pedro now tries to simp Sceptile in dms saying senpai.", " Bea pfp will always be a nsfw cropped pic or smth of similar", "Delta **was** the new owner of Brawl 'n talk cuz yes.", " spunj blocked his friends, then one day he came back.", " Plane have a new battle partner: Carmor."];
 
    const r = h[Math.floor(Math.random()*h.length)]
    message.channel.send(r);
@@ -226,21 +251,25 @@ else if (command === 'eal') {
 
     }
         else if (command === 'ourgang') {
-        message.channel.send('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge')
+        message.channel.send('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab')
         }
 
 		else if (command === 'question'){
-			if (!args.length) { message.channel.send("you dumbass have to ask me a question.") }
-                   const h = ["yes", "no", "maybe", "ur mom"];
+			if (!args.length) {
+            return message.channel.send("you dumbass have to ask me a question.");
+            }
+                   const h = ["yes", "no", "maybe", "most lickely yes", "not sure", "probably no", "am I supposed to know?", "I dunno. Isuppose yes"];
 
    const r = h[Math.floor(Math.random()*h.length)]
-   message.channel.send(r); }
+   message.channel.send(r);
+
+}
 if (command === 'gotobrazil') {
 if (!message.mentions.users.size) {
 	return message.reply('MENTION YOURSELF DUMB FUCK');
 }
 
-   const brazil = ["has been sent to brazil. Muito quente...", "Olá amigo! Bem vindo ao Brasil!"];
+   const brazil = ["has been sent to brazil. Muito quente...", ",Olá amigo! Bem vindo ao Brasil!", ", TheAmazingCC carried you to brazil"];
   const bruhzil = brazil[Math.floor(Math.random()*brazil.length)]
  {message.channel.send(message.mentions.users.first().username + " " + bruhzil)}
 
