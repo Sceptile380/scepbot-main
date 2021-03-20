@@ -258,7 +258,7 @@ else if (command === 'fab') {
 			if (!args.length) {
             return message.channel.send("you dumbass have to ask me a question.");
             }
-                   const h = ["yes", "no", "maybe", "most lickely yes", "not sure", "probably no", "am I supposed to know?", "I dunno. Isuppose yes"];
+                   const h = ["yes", "no", "maybe", "most likely yes", "not sure", "probably no", "am I supposed to know?", "I dunno. I suppose yes"];
 
    const r = h[Math.floor(Math.random()*h.length)]
    message.channel.send(r);
