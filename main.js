@@ -63,11 +63,11 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
 		{ name: 'die', value: 'you die for something', inline: true  },
         { name: 'invite', value: 'Sends invite for the bot', inline: true  },
         { name: 'funfact', value: 'Get a fun fact ', inline: true},
-        { name: 'cat', value: 'Shows a cat', inline: true}
-		{ name: 'gotobrazil', value: 'sends the mentioned user to brazil', inline: true}
-		{ name: 'question', value: 'replies with yes or no to your questions', inline: true}
-		{ name: 'ban', value: 'get banned lol (admin only!)', inline: true}
-		{ name: 'bean', value: 'get BEANED lol', inline: true}
+        { name: 'cat', value: 'Shows a cat', inline: true},
+		{ name: 'gotobrazil', value: 'sends the mentioned user to brazil', inline: true},
+		{ name: 'question', value: 'replies with yes or no to your questions', inline: true},
+		{ name: 'ban', value: 'get banned lol (admin only!)', inline: true},
+		{ name: 'bean', value: 'get BEANED lol', inline: true},
 		{ name: 'say', value: 'he acts like a parrot (admins only!)', inline: true}
 
 	)
