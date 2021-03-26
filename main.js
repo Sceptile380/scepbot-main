@@ -14,7 +14,7 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 // ##########################################################################
 client.once('ready', () => {
     console.log('Sceptile is ready!!!!!!!');
-    client.user.setActivity('I use arch btw');
+    client.user.setActivity('a');
 
 
 });
@@ -78,7 +78,7 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
 
     else if (command == 'say') {
 if (!args.length) {message.channel.send("What should i say")}
-if (message.member.hasPermission('ADMINISTRATOR')) message.channel.send(args.join(" "))
+if (message.member.hasPermission('ADMINISTRATOR')) { message.channel.send(args.join(" ")); message.delete() }
 else { message.channel.send("no ur not an admin") }
 
 }
@@ -255,14 +255,29 @@ else if (command === 'fab') {
         }
 
 		else if (command === 'question'){
+        var somevar = true
 			if (!args.length) {
             return message.channel.send("you dumbass have to ask me a question.");
             }
-                   const h = ["yes", "no", "maybe", "most likely yes", "not sure", "probably no", "am I supposed to know?", "I dunno. I suppose yes"];
+
+
+                   const h = ["yes", "no", "maybe", "most lickely yes", "not sure", "probably no", "am I supposed to know?", "I dunno. I suppose yes"];
 
    const r = h[Math.floor(Math.random()*h.length)]
+                    if (args[0] == "how") {
+                    somevar = false
+                if (args[1] == "long") {
+               const lol = ["A while", "Never", "It already happened" ]
+                const lolh = lol[Math.floor(Math.random()*lol.length)]
+                message.channel.send(lolh)
+                }
+                else {
+                    message.channel.send(r)
+                }
+            }
+            if (somevar) {
    message.channel.send(r);
-
+}
 }
 if (command === 'gotobrazil') {
 if (!message.mentions.users.size) {
@@ -295,8 +310,8 @@ message.channel.send(message.mentions.users.first().username + " " + "has been b
 client.on("message", async message => {
  const args = message.content.slice(prefix.length).trim().split(/ +/);
  const command = args.shift().toLowerCase();
-
-    if (command === ('pokemon')) {
+if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (message.content.startsWith(prefix + 'pokemon')) {
       const x = args.join("_")
       if((await fetch("https://m.bulbapedia.bulbagarden.net/wiki/"+x+"_(Pok%C3%A9mon)")).status == 404){
         message.channel.send("not found")
@@ -359,4 +374,4 @@ client.on("message", async message => {
 });
  // #_---------------------------------------- token -----------------------------------------
 client.login('NzY3MTIwNDY3ODA2Mzg4MjU0.X4tSmw.wOa7LWS_toOX20NTplztyCeKArk');
-
+//client.login('NzY3MTIwNDY3ODA2Mzg4MjU0.X4tSmw.wOa7LWS_toOX20NTplztyCeKArk');
