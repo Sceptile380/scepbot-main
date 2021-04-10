@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({ disableMentions: 'all' });
 const fetch = require('node-fetch');
 const querystring = require('querystring');
 const prefix = "$"
@@ -10,10 +10,12 @@ function clean(text) {
       return text;
 }
 const talkedRecently = new Set();
+const talkedbruh = new Set();
 const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
 // ##########################################################################
 client.once('ready', () => {
-    console.log('Sceptile is ready!!!!!!!');
+
+console.log('Sceptile is ready!!!!!!!');
     client.user.setActivity('a');
 
 
@@ -26,16 +28,18 @@ process.on('unhandledRejection', error => {
 
 
 
-// ############################################################################
+//############################################################################
 
 
 
 client.on('message', message => {
+if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+
 if (!message.guild) return;
 const args = message.content.slice(prefix.length).trim().split(/ +/);
 const command = args.shift().toLowerCase();
 // ###########################################################################
-if (!message.content.startsWith(prefix) || message.author.bot) return;
 if (talkedRecently.has(message.author.id))
   return;
 
@@ -59,7 +63,7 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
     .setDescription(`Prefix is ${prefix}`)
     .addFields(
 		{ name: '**OurGang**', value: 'Lists ourgang commands...', inline: true  },
-		{ name: 'Support', value: 'Sends invite to support server', inline: true  },
+		{ name: 'Invite', value: 'Gives you invite', inline: true  },
 		{ name: 'die', value: 'you die for something', inline: true  },
         { name: 'invite', value: 'Sends invite for the bot', inline: true  },
         { name: 'funfact', value: 'Get a fun fact ', inline: true},
@@ -75,16 +79,96 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
      message.channel.send(bed)
 
 	}
+    else if (command == 'lobster-nita') {
+    message.channel.send("you little shit click on this link and vote for Sceptile380. Or yknow what happens next https://make.supercell.com/en/creation/lobster-nita [AD]"
 
+    )}
+    else if (command == 'coinflip') {
+const aaa = ["tails", "heads"];
+   const aaaa = aaa[Math.floor(Math.random()*aaa.length)]
+var varabl = true
+if (args[0].toLowerCase() == 'heads') {
+varabl = false
+if (aaaa == "tails") {
+     const onetwo = new Discord.MessageEmbed()
+    .setColor(emcolor)
+    .setTitle('Tails..')
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+    .setDescription("U lost, it landed on tails");
+
+message.channel.send(onetwo)
+}
+else if (aaaa == 'heads') {
+
+    const two = new Discord.MessageEmbed()
+     .setColor(emcolor)
+     .setTitle('Heads...')
+     .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+     .setDescription("It landeed on heads let's goo!!!");
+
+ message.channel.send(two)
+
+}
+}
+else if (args[0].toLowerCase() == 'tails') {
+varabl = false
+if (aaaa == "tails") {
+      const idka = new Discord.MessageEmbed()
+     .setColor(emcolor)
+     .setTitle('Tails..')
+     .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+     .setDescription("It landed on tails let's goo");
+
+ message.channel.send(idka)
+ }
+else if (aaaa == 'heads') {
+        const aaaaaa = new Discord.MessageEmbed()
+       .setColor(emcolor)
+       .setTitle('Heads..')
+       .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+       .setDescription("U lost, it landed on heads");
+
+ message.channel.send(aaaaaa)
+
+ }
+
+}
+if (varabl) { message.channel.send("Heads or tails?")}
+}
     else if (command == 'say') {
 if (!args.length) {message.channel.send("What should i say")}
 if (message.member.hasPermission('ADMINISTRATOR')) { message.channel.send(args.join(" ")); message.delete() }
 else { message.channel.send("no ur not an admin") }
 
 }
+//else if (command == 'servers') {
+//client.guilds.cache.forEach((guild) => {
+//           message.channel.send(" - " + guild.name)
+//  })
+//}
+
+   else if (command == 'dumbrate') {
+
+        var whatev = new Discord.MessageEmbed()
+       .setColor(emcolor)
+       .setTitle('Dumbrate')
+//       .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+       .setDescription("Ur " + Math.floor(Math.random()*101) + "% dumb");
+
+
+message.channel.send(whatev)
+}
+
     else if (command == 'ping') {
-    message.channel.send('Pinging...').then(sent => {
-    sent.edit(`My ping: ${sent.createdTimestamp - message.createdTimestamp}ms api ping ${client.ws.ping}ms`);
+message.channel.send('Pinging...').then(sent => {
+    var embrd = new Discord.MessageEmbed()
+       .setColor(emcolor)
+       .setTitle('Ping')
+       .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+       .setDescription(`My ping: ${sent.createdTimestamp - message.createdTimestamp}ms api ping ${client.ws.ping}ms`);
+
+
+   sent.edit(`My ping: ${sent.createdTimestamp - message.createdTimestamp}ms api ping ${client.ws.ping}ms`);
 });
 }
 
@@ -93,6 +177,13 @@ else if (command === 'die') {
         const months = ["died because he tried to breathe lava", "is dead cause the chat xd", "died for being cringe", "died for being simp", " is dead for watching too much Bsp", " died for saying h too many times.", "died for the joy of everyone", "died because he is a fucking bedrock breaker and nobody likes him.", "has fallen in a river", "spilled his brain off his left ear. Correction: he never had a brain, he just spilled some shit. my bad.", "committed suicide. You fool!", "***, do you wanna have a bad time?***", ", you stink so much that neither the Death wants you. Sad."];
 
     const ra = months[Math.floor(Math.random()*months.length)]
+
+ var embrde = new Discord.MessageEmbed()
+       .setColor(emcolor)
+        .setTitle('You died forrr.....')
+       .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+       .setDescription(`${message.author.username} ${ra}`);
+
     message.channel.send(`${message.author.username} ${ra}`);
 }
    else if (command === 'zap') {
@@ -208,7 +299,14 @@ else if (command === 'fab') {
 
 }
    else if (command === 'invite') {
-    message.channel.send('https://discordapp.com/oauth2/authorize?client_id=767120467806388254&scope=bot&permissions=2146958847 Here. why you want me?')
+                        var lolb  = new Discord.MessageEmbed()
+                        .setColor(emcolor)
+                        .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+                        .setTitle('Invite')
+                        .setDescription('https://discordapp.com/oauth2/authorize?client_id=767120467806388254&scop')
+                        .setFooter('Why do you, want me??');
+
+    message.channel.send(lolb)
 }
 
    else if (command === 'server') {
@@ -236,7 +334,15 @@ else if (command === 'fab') {
                    const h = ["Zap, before being gay, was bisexual for some reasons.", "Andrew became Sceptile380's gf for 4 minutes only because Sceptile wanted a gf.", "Sceptile380 has never seen brawlstarsphomo, luckily.", "Spungebob left Our Brawl because yes.", " Sceptile380's oc have an hook now.", "Scand bot will be a brawler if ealanedem completes it.", " spunge is bacc yay" , "hey shitass... nvm.", "Now Sand is a protogen." , "Wendro came straight from reddit and surprisingly everyone knew him." , "yooooooo! who lives in a pinap- nevermind I'm having a stroke.", " People finally stopped hating Zap.", " Pedro now tries to simp Sceptile in dms saying senpai.", " Bea pfp will always be a nsfw cropped pic or smth of similar", "Delta **was** the new owner of Brawl 'n talk cuz yes.", " spunj blocked his friends, then one day he came back.", " Plane have a new battle partner: Carmor."];
 
    const r = h[Math.floor(Math.random()*h.length)]
-   message.channel.send(r);
+                           var ba  = new Discord.MessageEmbed()
+                           .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+                            .setColor(emcolor)
+                            .setTitle('Random fun fact')
+                            .setDescription(r)
+                            .setFooter('Lol');
+
+
+   message.channel.send(ba);
 
 }
 
@@ -251,7 +357,13 @@ else if (command === 'fab') {
 
     }
         else if (command === 'ourgang') {
-        message.channel.send('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab')
+         var zeroo  = new Discord.MessageEmbed()
+                           .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+                            .setColor(emcolor)
+                            .setTitle('Our gang')
+                            .setDescription('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab')
+                            .setFooter('Imagine using this command')
+        message.channel.send(zeroo)
         }
 
 		else if (command === 'question'){
@@ -259,11 +371,10 @@ else if (command === 'fab') {
 			if (!args.length) {
             return message.channel.send("you dumbass have to ask me a question.");
             }
-
-
                    const h = ["yes", "no", "maybe", "most lickely yes", "not sure", "probably no", "am I supposed to know?", "I dunno. I suppose yes"];
-
    const r = h[Math.floor(Math.random()*h.length)]
+
+
                     if (args[0] == "how") {
                     somevar = false
                 if (args[1] == "long") {
@@ -275,18 +386,36 @@ else if (command === 'fab') {
                     message.channel.send(r)
                 }
             }
+            if (args[1] == 'or') {
+         var ifeveryon = false
+         somevar = false
+                const lola = [args[2], args[0]]
+                const lolk = lola[Math.floor(Math.random()*lola.length)]
+            if (args[0] == "@everyone") {
+            message.channel.send("No ping today")
+        ifeveryon = true
+        }
+            if (args[2] == "@everyone") {
+message.channel.send("No ping today")
+ifeveryon = true
+}
+    if (!ifeveryon) {
+        message.channel.send(`${message.author.username} i'll choose ` + lolk)
+            }}
             if (somevar) {
    message.channel.send(r);
 }
 }
 if (command === 'gotobrazil') {
 if (!message.mentions.users.size) {
-	return message.reply('MENTION YOURSELF DUMB FUCK');
+	return message.channel.send(`${message.author}` + ' has been sent to brazil');
 }
 
    const brazil = ["has been sent to brazil. Muito quente...", ",Olá amigo! Bem vindo ao Brasil!", ", TheAmazingCC carried you to brazil"];
   const bruhzil = brazil[Math.floor(Math.random()*brazil.length)]
- {message.channel.send(message.mentions.users.first().username + " " + bruhzil)}
+
+
+ message.channel.send(message.mentions.users.first().username + " " + bruhzil)
 
 
 }
@@ -308,10 +437,21 @@ message.channel.send(message.mentions.users.first().username + " " + "has been b
 });
 // --------------------------------- ASYNC ---------------------------------------------------------------
 client.on("message", async message => {
- const args = message.content.slice(prefix.length).trim().split(/ +/);
- const command = args.shift().toLowerCase();
 if (!message.content.startsWith(prefix) || message.author.bot) return;
-    if (message.content.startsWith(prefix + 'pokemon')) {
+if (talkedbruh.has(message.author.id))
+ return;
+talkedbruh.add(message.author.id);
+ setTimeout(() => {
+  talkedbruh.delete(message.author.id);
+ }, 3000);
+
+
+const args = message.content.slice(prefix.length).trim().split(/ +/);
+const command = args.shift().toLowerCase();
+
+
+//if (message.content.startsWith(prefix + )
+if (message.content.startsWith(prefix + 'pokemon')) {
       const x = args.join("_")
       if((await fetch("https://m.bulbapedia.bulbagarden.net/wiki/"+x+"_(Pok%C3%A9mon)")).status == 404){
         message.channel.send("not found")
@@ -321,7 +461,7 @@ if (!message.content.startsWith(prefix) || message.author.bot) return;
 }
     }
 
-  if(message.content.startsWith(prefix + 'ban')) {
+if(message.content.startsWith(prefix + 'ban')) {
       if (!message.member.hasPermission('BAN_MEMBERS'))
       return message.reply("No permissions");
      let member = message.mentions.members.first();
