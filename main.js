@@ -56,28 +56,95 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
 
 
    if (command === 'help') {
-     const bed = new Discord.MessageEmbed()
+     if (!args.length) {
+  const bed = new Discord.MessageEmbed()
     .setColor(emcolor)
-    .setTitle('Help')
+    .setTitle('Help CATEGORIES')
     .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
-    .setDescription(`Prefix is ${prefix}`)
+    .setDescription(`**Prefix is ${prefix}**`)
     .addFields(
-		{ name: '**OurGang**', value: 'Lists ourgang commands...', inline: true  },
-		{ name: 'Invite', value: 'Gives you invite', inline: true  },
-		{ name: 'die', value: 'you die for something', inline: true  },
-        { name: 'invite', value: 'Sends invite for the bot', inline: true  },
-        { name: 'funfact', value: 'Get a fun fact ', inline: true},
-        { name: 'cat', value: 'Shows a cat', inline: true},
-		{ name: 'gotobrazil', value: 'sends the mentioned user to brazil', inline: true},
-		{ name: 'question', value: 'replies with yes or no to your questions', inline: true},
-		{ name: 'ban', value: 'get banned lol (admin only!)', inline: true},
-		{ name: 'bean', value: 'get BEANED lol', inline: true},
-		{ name: 'say', value: 'he acts like a parrot (admins only!)', inline: true}
+		{ name: '$OurGang', value: 'Lists ourgang commands...'},
+		{ name: '$help games', value: 'lists games'},
+		{ name: '$help fun', value: 'lists fun commands (all fun and games :)'},
+    { name: '$help bot', value: 'commands like about the bot or invite'},
+    { name : '$help ulity' , value: 'normal commands, ig'}
+	) 
+  message.channel.send(bed)
 
+     }
+  const bed = new Discord.MessageEmbed()
+    .setColor(emcolor)
+    .setTitle('Help CATEGORIES')
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+    .setDescription(`**Prefix is ${prefix}**`)
+    .addFields(
+		{ name: '$OurGang', value: 'Lists ourgang commands...'},
+		{ name: '$help games', value: 'lists games'},
+		{ name: '$help fun', value: 'lists fun commands (all fun and games :)'},
+        { name: '$help bot', value: 'commands like about the bot or invite'},
 	)
-    .setFooter('h, also ping command does it\'s function');
-     message.channel.send(bed)
+    .setFooter('hi');
+    if (args[0] == "games") {
+      const embeda = new Discord.MessageEmbed()
+      .setColor(emcolor)
+      .setTitle('Help GAMES')
+      .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+      .setDescription(`**Prefix is ${prefix}**`)
+      .addFields(
+      { name: '$coinflip', value: '~~says heads or tails~~ you... flip a coin ig...'},
+      { name: '$dumbrate', value: '(technically this isn\'t a game but whatever) how dumb you are, ig (completly random)'},
+      { name: '$die', value: '(technically this isn\'t a game but whatever) you die, ig, for something (completly random)'},
+      { name: '$question', value: 'question, idk (technically not a game)'},
+    )
+      .setFooter('hi');
+        message.channel.send(embeda)
+    }
+    if (args[0] == "bot") {
+      const embedb = new Discord.MessageEmbed()
+      .setColor(emcolor)
+      .setTitle('Help bot')
+      .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+      .setDescription(`**Prefix is ${prefix}**`)
+      .addFields(
+      { name: '$ping', value: 'api and my ping'},
+      {name: '$invite', value: '"link" to the bot' },
+      { name: '$eval', value: 'just a thing where **sceptile (only)** can execute javascript on go'}
+      )
+      .setFooter('hi');
+        message.channel.send(embedb)
+    }
+    if (args[0] == 'ulity') {
+      const embedd = new Discord.MessageEmbed()
+      .setColor(emcolor)
+      .setTitle('help ULITY')
+      .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+      .setDescription("Prefix is $")
+      .addFields (
+      {name: '$cat', value: 'cats are cool'},
+      {name: '$server', value: 'cool info, am i right'},
+      {name: 'ban', value: 'i said, all fun and games'}
 
+
+
+      ) 
+      .setFooter('hello');
+      message.channel.send(embedd)
+    }
+    
+    if (args[0] == "fun") {
+      const embedc = new Discord.MessageEmbed()
+      .setColor(emcolor)
+      .setTitle('Help fun')
+      .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
+      .setDescription(`**Prefix is ${prefix}**`)
+      .addFields(
+      { name: '$gotobrazil', value: 'ehm, you go to brazil'},
+      { name: '$bean', value: 'get beaned lol, i mean "bean someone"'},
+      { name:  '$pokemon', value: 'get an.. image of a pokemon, that\'s all'}
+    )
+      .setFooter('hi');
+        message.channel.send(embedc)
+    }
 	}
     else if (command == 'lobster-nita') {
     message.channel.send("you little shit click on this link and vote for Sceptile380. Or yknow what happens next https://make.supercell.com/en/creation/lobster-nita [AD]"
@@ -302,8 +369,8 @@ else if (command === 'fab') {
                         var lolb  = new Discord.MessageEmbed()
                         .setColor(emcolor)
                         .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
-                        .setTitle('Invite')
-                        .setDescription('https://discordapp.com/oauth2/authorize?client_id=767120467806388254&scop')
+                        .setTitle('Click here for Invite')
+                        .setURL('https://discord.com/api/oauth2/authorize?client_id=767120467806388254&permissions=0&scope=bot')
                         .setFooter('Why do you, want me??');
 
     message.channel.send(lolb)
@@ -361,7 +428,7 @@ else if (command === 'fab') {
                            .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
                             .setColor(emcolor)
                             .setTitle('Our gang')
-                            .setDescription('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab')
+                            .setDescription('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab\n funfact - fun facts about our gang')
                             .setFooter('Imagine using this command')
         message.channel.send(zeroo)
         }
