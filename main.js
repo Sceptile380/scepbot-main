@@ -1,7 +1,7 @@
+const fs = require('fs')
 const Discord = require('discord.js');
 const client = new Discord.Client({ disableMentions: 'all' });
 const fetch = require('node-fetch');
-const querystring = require('querystring');
 const prefix = "$"
 function clean(text) {
   if (typeof(text) === "string")
@@ -68,7 +68,7 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
 		{ name: '$help fun', value: 'lists fun commands (all fun and games :)'},
     { name: '$help bot', value: 'commands like about the bot or invite'},
     { name : '$help ulity' , value: 'normal commands, ig'}
-	) 
+	)
   message.channel.send(bed)
 
      }
@@ -126,11 +126,11 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
 
 
 
-      ) 
+      )
       .setFooter('hello');
       message.channel.send(embedd)
     }
-    
+
     if (args[0] == "fun") {
       const embedc = new Discord.MessageEmbed()
       .setColor(emcolor)
@@ -300,8 +300,7 @@ else if (command === 'die') {
             .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
                 .setColor(emcolor)
                 .setTitle('Delta')
-                .setDescription('Retarded as hell. Likes coding and undertale. Also very lazy. Hates ships. Positive')
-                .setFooter('to coronavirus. jk');
+                .setDescription('Boring man')
       message.channel.send(delta)
 }
 
@@ -475,7 +474,7 @@ ifeveryon = true
 }
 if (command === 'gotobrazil') {
 if (!message.mentions.users.size) {
-	return message.channel.send(`${message.author}` + ' has been sent to brazil');
+	return message.reply(' has been sent to brazil');
 }
 
    const brazil = ["has been sent to brazil. Muito quente...", ",Olá amigo! Bem vindo ao Brasil!", ", TheAmazingCC carried you to brazil"];
@@ -492,7 +491,7 @@ if (!message.mentions.users.size) {
 
 if (command === 'bean') {
 if (!message.mentions.users.size) {
-       return message.reply('no');
+       return message.reply('has been beaned lol');
    }
 
 message.channel.send(message.mentions.users.first().username + " " + "has been beaned. LOL")
@@ -558,6 +557,8 @@ if(message.content.startsWith(prefix + 'ban')) {
  message.channel.send(fembed)
 }
 
+
+
  })
 // only for sceptile commands
  client.on("message", message => {
@@ -580,5 +581,5 @@ if(message.content.startsWith(prefix + 'ban')) {
   }
 });
  // #_---------------------------------------- token -----------------------------------------
+//client.login('ODA4NzQ3NTkyODU4MzM3Mjgx.YCLC4w.jc_X5aMc-9_Mlj24R8xkOGjeLb0'); //bot.namw
 client.login('NzY3MTIwNDY3ODA2Mzg4MjU0.X4tSmw.wOa7LWS_toOX20NTplztyCeKArk');
-//client.login('NzY3MTIwNDY3ODA2Mzg4MjU0.X4tSmw.wOa7LWS_toOX20NTplztyCeKArk');
