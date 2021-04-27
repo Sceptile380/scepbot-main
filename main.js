@@ -3,24 +3,24 @@ const Discord = require('discord.js');
 const client = new Discord.Client({ disableMentions: 'all' });
 const fetch = require('node-fetch');
 const prefix = "$"
+
+const talkedRecently = new Set();
+const talkedbruh = new Set();
+const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
+
+
+
+
 function clean(text) {
   if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
   else
       return text;
 }
-const talkedRecently = new Set();
-const talkedbruh = new Set();
-const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
-// ##########################################################################
 client.once('ready', () => {
-
 console.log('Sceptile is ready!!!!!!!');
     client.user.setActivity('a');
-
-
 });
-// DEBUGING
 process.on('unhandledRejection', error => {
 	console.error('Unhandled promise rejection:', error);
 });
@@ -34,25 +34,23 @@ process.on('unhandledRejection', error => {
 
 client.on('message', message => {
 if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-
 if (!message.guild) return;
 const args = message.content.slice(prefix.length).trim().split(/ +/);
 const command = args.shift().toLowerCase();
-// ###########################################################################
 if (talkedRecently.has(message.author.id))
   return;
-
 talkedRecently.add(message.author.id);
 setTimeout(() => {
   talkedRecently.delete(message.author.id);
 }, 1500);
 
-// ############################################################################
 
 const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b9b9","#017c91","#ff80a8","#8fbc8f","#00b8ff","#3b0099","#0038fa","#2249aa","#ff003c","#ff280a","#a92323","#ff0000","#bbdcf2","#a5d1ee"];
-
      const emcolor = emcol[Math.floor(Math.random()*emcol.length)]
+
+
+
+
 
 
    if (command === 'help') {
@@ -146,9 +144,13 @@ const emcol = ["#c28500","#c1d0e4","#009bff","#e9ebee","#e2b659","#e9edf2","#b9b
         message.channel.send(embedc)
     }
 	}
+
+
+
+
+
     else if (command == 'lobster-nita') {
     message.channel.send("you little shit click on this link and vote for Sceptile380. Or yknow what happens next https://make.supercell.com/en/creation/lobster-nita [AD]"
-
     )}
     else if (command == 'coinflip') {
 const aaa = ["tails", "heads"];
@@ -369,8 +371,8 @@ else if (command === 'fab') {
                         .setColor(emcolor)
                         .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
                         .setTitle('Click here for Invite')
-                        .setURL('https://discord.com/api/oauth2/authorize?client_id=767120467806388254&permissions=0&scope=bot')
-                        .setFooter('Why do you, want me??');
+                        .setURL('https://discord.com/api/oauth2/authorize?client_id=767120467806388254&permissions=0&scope=applications.commands%20bot')
+                        .setFooter('Why do you want me??');
 
     message.channel.send(lolb)
 }
@@ -427,7 +429,7 @@ else if (command === 'fab') {
                            .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true }))
                             .setColor(emcolor)
                             .setTitle('Our gang')
-                            .setDescription('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab\n funfact - fun facts about our gang')
+                            .setDescription('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab\n commands \n $funfact - fun facts about our gang')
                             .setFooter('Imagine using this command')
         message.channel.send(zeroo)
         }
