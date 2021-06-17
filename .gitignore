@@ -5,7 +5,6 @@ yes.js
 .vscode
 ## i think it's better to not have it there
 ## *yeah you know*
-node_modules
 
 ## i don't want this bot to be overtaken by an edgy hacking group
 .env
