@@ -420,7 +420,7 @@ client.on('message', message => {
     //  })
     //}
     
-	else if (command == 'dumbrate') {
+	} else if (command == 'dumbrate') {
 
         var whatev = new Discord.MessageEmbed()
             .setColor(emcolor)
