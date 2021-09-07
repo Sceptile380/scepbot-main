@@ -11,7 +11,7 @@ const talkedRecently = new Set();
 const talkedbruh = new Set();
 //const osu = require("node-os-utils");
 // functions
-const testing = true
+const testing = false
 function formatBytes(bytes, decimals = 2) {
     if (bytes === 0) return '0 Bytes';
 
