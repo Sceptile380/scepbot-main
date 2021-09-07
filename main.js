@@ -418,9 +418,8 @@ client.on('message', message => {
     //client.guilds.cache.forEach((guild) => {
     //           message.channel.send(" - " + guild.name)
     //  })
-    //}
-    
-	} else if (command == 'dumbrate') {
+    //}    
+	if (command == 'dumbrate') {
 
         var whatev = new Discord.MessageEmbed()
             .setColor(emcolor)
