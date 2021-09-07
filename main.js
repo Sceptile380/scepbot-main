@@ -673,7 +673,7 @@ client.on('message', message => {
             .setTitle('Et')
             .setDescription('Et is super cool tech man, arch linux addict, gave an enormous help to Scep recreating and updating this bot.')
             .setFooter('what should I do-');
-        message.channel.send(Et)
+        message.channel.send(spunj)
 
     } else if (command === 'ourgang') {
         var zeroo = new Discord.MessageEmbed()
