@@ -205,6 +205,9 @@ client.on('message', message => {
                     name: '$gotobrazil',
                     value: 'ehm, you go to brazil'
                 }, {
+                    name: '$rps',
+                    value: 'rock, paper or scissors?'
+                }, {
                     name: '$bean',
                     value: 'get beaned lol, i mean "bean someone"'
                 }, {
@@ -385,7 +388,7 @@ client.on('message', message => {
         }}
 
     else if (command === 'rps') {
-        const acceptedReplies = ['rock', 'paper', 'scissors'];
+        const acceptedReplies = ['rock', 'paper', 'scissors', 'troll'];
         const random = Math.floor((Math.random() * acceptedReplies.length));
         const result = acceptedReplies[random];
 
@@ -397,16 +400,20 @@ client.on('message', message => {
         
         switch (choice) {
             case 'rock': {
-                if (result === 'paper') return message.reply('I won!');
-                else return message.reply('You won!');
+                if (result === 'paper') return message.reply('I choose paper :newspaper:. I won!');
+                else return message.reply('I choose scissors :scissors:.You won!');
             }
             case 'paper': {
-                if (result === 'scissors') return message.reply('I won!');
-                else return message.reply('You won!');        
+                if (result === 'scissors') return message.reply('I choose scissors :scissors:. I won!');
+                else return message.reply('I choose rock :rock:. You won!');        
             }
             case 'scissors': {
-                if (result === 'rock') return message.reply('I won!');
-                else return message.reply('You won!');
+                if (result === 'rock') return message.reply('I choose rock :rock:. I won!');
+                else return message.reply('I choose paper :newspaper:.You won!');
+            }
+            case 'troll': {
+                if (result === 'rock') return message.reply('Are you fucking trying to troll me? :sceptroll: ');
+                else return message.reply('I am speechless, trolled by a human. How embarassing...');
             }
             default: {
                 return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
@@ -652,9 +659,21 @@ client.on('message', message => {
             }))
             .setColor(emcolor)
             .setTitle('Spungebob')
-            .setDescription('Spunge is a 13 yeard old boy that likes to chat on discord and play brawl stars. he tries not to go mentaly insane because of school and can have mental breakdowns. He is very weird sometimes, and a big dumbass.')
+            .setDescription('Spunge is a 13 yeard old boy that likes to chat on discord and play brawl stars. he tries not to go mentaly insane because of school and can have mental breakdowns. He is very weird sometimes, and a big dumbass. He is a protogen now. ***That sounds familiar*** :eyes: ')
             .setFooter('simp');
         message.channel.send(spunj)
+		
+    } else if (command === 'spunge') {
+        const spunj = new Discord.MessageEmbed()
+            .setAuthor(message.author.username, message.author.displayAvatarURL({
+                format: "png",
+                dynamic: true
+            }))
+            .setColor(emcolor)
+            .setTitle('Et')
+            .setDescription('Et is super cool tech man, arch linux addict, gave an enormous help to Scep recreating and updating this bot.')
+            .setFooter('what should I do-');
+        message.channel.send(Et)
 
     } else if (command === 'ourgang') {
         var zeroo = new Discord.MessageEmbed()
@@ -664,7 +683,7 @@ client.on('message', message => {
             }))
             .setColor(emcolor)
             .setTitle('Our gang')
-            .setDescription('info of these guys:\n-$zap\n-$sceptile\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab\n commands \n $funfact - fun facts about our gang')
+            .setDescription('info of these guys:\n-$sceptile\n-$zap\n-$codrut\n-$et\n-$andrew \n-$sand\n-$skm\n-$delta\n-$eal\n-$serious\n-$bea\n-$spunge\n-$wendro\n-$fab\n commands \n $funfact - fun facts about our gang')
             .setFooter('Imagine using this command')
         message.channel.send(zeroo)
     } else if (command === 'question') {
