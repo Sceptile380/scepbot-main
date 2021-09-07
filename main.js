@@ -412,7 +412,7 @@ client.on('message', message => {
                 else return message.reply('I choose paper :newspaper:.You won!');
             }
             case 'troll': {
-                if (result === 'rock') return message.reply('Are you fucking trying to troll me? :sceptroll: ');
+                if (result === 'rock') return message.reply('Are you fucking trying to troll me? <:sceptroll:822569020678602782> ');
                 else return message.reply('I am speechless, trolled by a human. How embarassing...');
             }
             default: {
@@ -663,7 +663,7 @@ client.on('message', message => {
             .setFooter('simp');
         message.channel.send(spunj)
 		
-    } else if (command === 'spunge') {
+    } else if (command === 'et') {
         const spunj = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.displayAvatarURL({
                 format: "png",
