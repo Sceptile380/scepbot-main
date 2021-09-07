@@ -412,7 +412,7 @@ client.on('message', message => {
                 else return message.reply('I choose paper :newspaper:.You won!');
             }
             case 'troll': {
-                if (result === 'rock') return message.reply('Are you fucking trying to troll me? <:sceptroll:822569020678602782> ');
+                if (result === 'rock') return message.reply('Are you fucking trying to troll me?');
                 else return message.reply('I am speechless, trolled by a human. How embarassing...');
             }
             default: {
