@@ -11,7 +11,7 @@ const talkedRecently = new Set();
 const talkedbruh = new Set();
 //const osu = require("node-os-utils");
 // functions
-const testing = false
+const testing = true
 function formatBytes(bytes, decimals = 2) {
     if (bytes === 0) return '0 Bytes';
 
@@ -374,17 +374,17 @@ client.on('message', message => {
         if (varabl) {
             message.channel.send("Heads or tails?")
         }
-    } else if (command == 'say') {
+    } 
+    else if (command == 'say') {
         if (message.member.hasPermission('ADMINISTRATOR')) {
             if (!args.length) {
                 message.channel.send("What should I say?")
             }
             message.channel.send(args.join(" "))
             message.delete()
-        }
-		 {
+        }}
 
-    if (command === 'rps') {
+    else if (command === 'rps') {
         const acceptedReplies = ['rock', 'paper', 'scissors'];
         const random = Math.floor((Math.random() * acceptedReplies.length));
         const result = acceptedReplies[random];
@@ -393,7 +393,6 @@ client.on('message', message => {
         if (!choice) return message.channel.send(`How to play: \`${prefix}rps <rock|paper|scissors>\``);
         if (!acceptedReplies.includes(choice)) return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
         
-        console.log('Bot Result:', result);
         if (result === choice) return message.reply("It's a tie! We had the same choice.");
         
         switch (choice) {
@@ -413,13 +412,13 @@ client.on('message', message => {
                 return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
             }
 
-    }
+    }}
     //else if (command == 'servers') {
     //client.guilds.cache.forEach((guild) => {
     //           message.channel.send(" - " + guild.name)
     //  })
     //}    
-	if (command == 'dumbrate') {
+	else if (command == 'dumbrate') {
 
         var whatev = new Discord.MessageEmbed()
             .setColor(emcolor)
