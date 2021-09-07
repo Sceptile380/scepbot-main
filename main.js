@@ -33,7 +33,7 @@ function clean(text) {
 }
 client.once('ready', () => {
     console.log(`${client.user.tag} is ready!!!!!!!`);
-    client.user.setActivity('dfghjuytrf');
+    client.user.setActivity('updating...');
 });
 
 
@@ -219,7 +219,7 @@ client.on('message', message => {
 
 
     if (command == 'lobster-nita') {
-        message.channel.send("you little shit click on this link and vote for Sceptile380. Or yknow what happens next https://make.supercell.com/en/creation/lobster-nita [AD]")
+        message.channel.send("https://make.supercell.com/en/creation/lobster-nita ***Remember this? Feel old yet?***")
     } else if (command == 'resources') {
         var emlol = new Discord.MessageEmbed()
             .setColor(emcolor)
@@ -307,11 +307,111 @@ client.on('message', message => {
     } else if (command == 'say') {
         if (message.member.hasPermission('ADMINISTRATOR')) {
             if (!args.length) {
-                message.channel.send("What should i say")
+                message.channel.send("What should I say?")
             }
             message.channel.send(args.join(" "))
             message.delete()
         }
+		    } else if (command == 'coinflip') {
+        const aaa = ["tails", "heads"];
+        const aaaa = aaa[Math.floor(Math.random() * aaa.length)]
+        var varabl = true
+        if (args[0].toLowerCase() == 'heads') {
+            varabl = false
+            if (aaaa == "tails") {
+                const onetwo = new Discord.MessageEmbed()
+                    .setColor(emcolor)
+                    .setTitle('Tails..')
+                    .setAuthor(message.author.username, message.author.displayAvatarURL({
+                        format: "png",
+                        dynamic: true
+                    }))
+                    .setDescription("U lost, it landed on tails");
+
+                message.channel.send(onetwo)
+            } else if (aaaa == 'heads') {
+
+                const two = new Discord.MessageEmbed()
+                    .setColor(emcolor)
+                    .setTitle('Heads...')
+                    .setAuthor(message.author.username, message.author.displayAvatarURL({
+                        format: "png",
+                        dynamic: true
+                    }))
+                    .setDescription("It landeed on heads let's goo!!!");
+
+                message.channel.send(two)
+
+            }
+        } else if (args[0].toLowerCase() == 'tails') {
+            varabl = false
+            if (aaaa == "tails") {
+                const idka = new Discord.MessageEmbed()
+                    .setColor(emcolor)
+                    .setTitle('Tails..')
+                    .setAuthor(message.author.username, message.author.displayAvatarURL({
+                        format: "png",
+                        dynamic: true
+                    }))
+                    .setDescription("It landed on tails let's goo");
+
+                message.channel.send(idka)
+            } else if (aaaa == 'heads') {
+                const aaaaaa = new Discord.MessageEmbed()
+                    .setColor(emcolor)
+                    .setTitle('Heads..')
+                    .setAuthor(message.author.username, message.author.displayAvatarURL({
+                        format: "png",
+                        dynamic: true
+                    }))
+                    .setDescription("U lost, it landed on heads");
+
+                message.channel.send(aaaaaa)
+
+            }
+
+        }
+        if (varabl) {
+            message.channel.send("Heads or tails?")
+        }
+    } else if (command == 'say') {
+        if (message.member.hasPermission('ADMINISTRATOR')) {
+            if (!args.length) {
+                message.channel.send("What should I say?")
+            }
+            message.channel.send(args.join(" "))
+            message.delete()
+        }
+		 {
+
+    if (command === 'rps') {
+        const acceptedReplies = ['rock', 'paper', 'scissors'];
+        const random = Math.floor((Math.random() * acceptedReplies.length));
+        const result = acceptedReplies[random];
+
+        const choice = args[0];
+        if (!choice) return message.channel.send(`How to play: \`${prefix}rps <rock|paper|scissors>\``);
+        if (!acceptedReplies.includes(choice)) return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
+        
+        console.log('Bot Result:', result);
+        if (result === choice) return message.reply("It's a tie! We had the same choice.");
+        
+        switch (choice) {
+            case 'rock': {
+                if (result === 'paper') return message.reply('I won!');
+                else return message.reply('You won!');
+            }
+            case 'paper': {
+                if (result === 'scissors') return message.reply('I won!');
+                else return message.reply('You won!');        
+            }
+            case 'scissors': {
+                if (result === 'rock') return message.reply('I won!');
+                else return message.reply('You won!');
+            }
+            default: {
+                return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
+            }
 
     }
     //else if (command == 'servers') {
@@ -350,7 +450,7 @@ client.on('message', message => {
 
         var embrde = new Discord.MessageEmbed()
             .setColor(emcolor)
-            .setTitle('You died forrr.....')
+            .setTitle('You died for...')
             .setAuthor(message.author.username, message.author.displayAvatarURL({
                 format: "png",
                 dynamic: true
@@ -367,7 +467,7 @@ client.on('message', message => {
             .setColor(emcolor)
             .setTitle('Zappatron')
             .setURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-            .setDescription('Zappatron, AKA Zap, is a gay boy. He is 13 years old and like brawlstarsp. He is a horni boi, expert csv modder, likes 8-bit, and sometimes asks sceptile to make a maid skin for it. With sceptile, he got 3 brawlers in reBrawl.')
+            .setDescription('self proclaimed game developer, owner of a "private server" based on classic brawl, has a very annoying attitude, everyone from bnt hates him because of his past.')
             .setFooter('a h');
         message.channel.send(exampleEmbed);
     } else if (command === 'sceptile') {
@@ -378,7 +478,7 @@ client.on('message', message => {
             }))
             .setColor(emcolor)
             .setTitle('Sceptile380')
-            .setDescription('Sceptile380 is a 15 years old boy from Italy. He does lots of dumb jokes about his country, but no one cares. He likes Pokemon since he was 6, and likes Brawl Stars because of Modding. He is also a good Modder and can make custom skins.')
+            .setDescription('Sceptile380 is a 16 years old boy from Italy. He does lots of dumb jokes about his country, but no one cares, did you ask? He likes Pokemon since he was 5, and likes Brawl Stars because of Modding. He is also a good Modder and can make custom skins. During summer 2021, he decided to leave his modelling occupation.')
             .setFooter('he wears an eyepatch that he actually don\'t need.');
         message.channel.send(Embed)
     } else if (command === 'sand') {
@@ -389,7 +489,7 @@ client.on('message', message => {
             }))
             .setColor(emcolor)
             .setTitle('Mr.Sandman')
-            .setDescription('Mr. Sandman, or just Sand is a 12 years old boi that likes the character Sandy from Brawl Stars. He is a protogen now. He cured his depression thanks to his Discord friends. He likes to draw and does it very well. He tried to escape Our brawl...but there is no WAY.Now he is a protogen furry.')
+            .setDescription('Mr. Sandman, or just Sand is a 12 years old boi that likes the character Sandy from Brawl Stars. He cured his depression thanks to his Discord friends. He likes to draw and does it very well. He tried to escape Our brawl...but there is no **WAY**. Now he is a protogen furry.')
             .setFooter('he is secretly sandsunderman');
         message.channel.send(Emb)
 
@@ -423,7 +523,7 @@ client.on('message', message => {
             }))
             .setColor(emcolor)
             .setTitle('Ocean man')
-            .setDescription('oh, you wanna know about this guy? This guy love dolphins.and yeah... this guy is nothing special.')
+            .setDescription('oh, you wanna know about this guy? This guy love dolphins. And yeah... this guy is nothing special.')
             .setFooter('SERIOUS LOL');
         message.channel.send(serious)
     } else if (command === 'skm') {
@@ -435,7 +535,7 @@ client.on('message', message => {
             .setColor(emcolor)
             .setTitle('SKM')
             .setDescription('SKM - A human being obsessed with modding Brawl Stars, playing Cookie Run, going to school and secretly saving random pictures of Cirno Fumo on his 1TB hard drive.')
-            .setFooter('lol h');
+            .setFooter('f*mo addict');
         message.channel.send(skm)
 
     } else if (command === 'eal') {
@@ -446,8 +546,8 @@ client.on('message', message => {
                 dynamic: true
             }))
             .setTitle('Ealanedem')
-            .setDescription('Professional idot. 17y old, known for making Brawl Stars csv mods and hes a moon')
-            .setFooter('do not the cat is gon');
+            .setDescription('Still 17, no longer interested in modding bs, fellow Hollow Knight and fnf enthusiast, *silksong when*')
+            .setFooter('do not the cat is gone, behold the blue Moon of Cthulhu');
         message.channel.send(eal)
     } else if (command === 'bea') {
         const be = new Discord.MessageEmbed()
@@ -457,7 +557,7 @@ client.on('message', message => {
                 dynamic: true
             }))
             .setTitle('Bea')
-            .setDescription('Bea is a beesexual 13 years old. He says "Ok" too many times and wanted to delete Our Brawl for no reasons, but it got deleted anyways. Bee free!')
+            .setDescription('Bea is a beesexual (bi) 14 years old. He used to say "Ok" too many times and wanted to delete Our Brawl for no reasons, but it got deleted anyways. Now he speedruns a ban in BnT and simps Fab.')
             .setFooter('understandable, have a mice day.');
         message.channel.send(be)
 
@@ -481,10 +581,22 @@ client.on('message', message => {
                 dynamic: true
             }))
             .setTitle('Fabtastic')
-            .setDescription('Fab is a "bad" artist, when he actually is good. atleast thats what others say. he is a content creator and bs player. that is pretty much all. i guess.')
+            .setDescription('Fab calls himself "bad" artist, when he is actually good. Atleast that\'s what others say. He is a content creator and bs player. That is pretty much all. I guess.')
             .setFooter('best artist ever');
         message.channel.send(be)
 
+    } else if (command === 'codrut') {
+        const be = new Discord.MessageEmbed()
+            .setColor(emcolor)
+            .setAuthor(message.author.username, message.author.displayAvatarURL({
+                format: "png",
+                dynamic: true
+            }))
+            .setTitle('Codrut2113')
+            .setDescription('Codrut is from Romania, his oc is literally a masked Gene. He once made an arg about his oc that caught Sceptile\'s and Delta\'s attention. ')
+            .setFooter('I wear a mask with a smile for hours at a time');
+        message.channel.send(be)
+		
     } else if (command === 'invite') {
         var lolb = new Discord.MessageEmbed()
             .setColor(emcolor)
